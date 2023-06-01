@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { fetchWeather } from "./api/fetchWeather";
 import './App.css'
 
 const App = () => {
+	const [query, setQuery] = useState('');
+
 	return (
-		<h1>App</h1>
+		<div className="main-container">
+			<input
+				type="text"
+				className="search"
+				placeholder="Search ..."
+				value={query}
+				oncChange={(e) => setQuery(e.target.value)}
+			/>
+		</div>
 	)
 }
 
